@@ -1,0 +1,80 @@
+.first{
+    // 顶部导航
+    .am-navbar{
+        background: #00bc5b;
+        select{
+            width: 80px;
+            background-color: #00bc5b;
+            color: #fff;
+            border: 0;
+        }
+        .am-navbar-left{
+            flex-grow: 2;
+        }
+        .am-navbar-title{
+            flex-grow: 7;
+            .am-search{
+                width: 100%;
+                background-color: #00bc5b;
+                .am-search-input{
+                    border-radius: 15px;
+                }
+                .am-search-cancel{
+                    color: #000;
+                }
+            }
+        }
+        .am-navbar-right{
+            flex-grow: 1;
+            img{
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
+    // 图标导航
+    .am-grid{
+        .am-flexbox-item{
+            min-height: 106px;
+            .am-grid-item-content{
+                padding: 0;
+            }
+        }
+    }
+
+    // 猜你喜欢
+    .likeSingle{
+        padding: 0 10px;
+        display: flex;
+        margin-top: 15px;
+        .houseImg{
+            flex-grow: 3;
+            margin-right: 10px;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+            
+        }
+        .houseInfo{
+            flex-grow: 5;
+            p{
+                font: bold 20px/20px '微软雅黑';
+                margin: 0;
+            }
+            span{
+                font-size: 14px;
+                display: block;
+                line-height: 20px;
+            }
+        }
+        >span{
+            flex-grow: 2;
+            font-size: 16px;
+            color: red;
+            text-align: right;
+        }
+    }
+    
+}

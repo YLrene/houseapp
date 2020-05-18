@@ -1,0 +1,78 @@
+.my{
+    // 头部信息
+    .topHead{
+        background: #4dc8f4;
+        padding: 15px 10px;
+        .am-flexbox{
+            .head{
+                border-radius: 50%;
+                flex-grow: 2;
+            }
+            .headSpan{
+                flex-grow: 7;
+                padding-left: 15px;
+                span:nth-of-type(1){
+                    font-size: 20px;
+                    color: #fff;
+                    display: block;
+                    line-height: 2em;
+                }
+                span:nth-of-type(2){
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+            .set_up{
+                flex-grow: 1;
+                width: 20px;
+                size: 100%；
+            }
+        }
+        .headNum{
+            flex-grow: 1;
+            text-align: center;
+            color: #fff;
+            margin-top: 15px;
+            p{
+                margin-top: 0;
+            }
+            img{
+                width: 30px;
+                size: 100%;
+                margin-right: 20px;
+                vertical-align: middle;
+            }
+            span{
+                vertical-align: middle;
+            }
+        }
+        .headNum:not(:first-child){
+            border-left: 1px solid #fff;
+        }
+    }
+    // 信息列表
+    .myList{
+        .mySingle{
+            display: flex;
+            font-size: 20px;
+            line-height: 32px;
+            padding: 10px 0;
+            border-bottom: 1px solid #515151;
+            img{
+                width: 32spx;
+                height: 32px;
+                size: 100%;
+                flex-grow: 0.2;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            span:nth-of-type(1){
+                flex-grow: 9;
+                vertical-align: middle;
+            }
+            span:nth-of-type(2){
+                flex-grow: 0.8;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+#root{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+.login {
+    height: 100%;
+    background-color: #fff;
+    .am-button{
+        background: #00bc5b;
+    }
+        .to {
+            a {
+                color: #00bc5b;
+            }
+        }
+
+    .agreement {
+        text-align: center;
+        color: #999;
+        position: absolute;
+        bottom: 50px;
+    }
+}

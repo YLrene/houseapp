@@ -1,0 +1,19 @@
+.City{
+    .cityTitle{
+        color:#999;
+        background:#f5f5f5;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+    }
+    .cityName{
+        color:#000;
+        background:#fff;
+        padding: 15px 20px;
+        font-size: 22px;
+    }
+    .cityName:not(:last-child){
+        border-bottom: 1px solid #eee;
+    }
+}

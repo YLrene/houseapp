@@ -1,0 +1,36 @@
+.chat{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    .chatBox{
+        width: 280px;
+        height: 280px;
+        background: #fff;
+        text-align: center;
+        .head{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            img{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+            }
+        }
+        p{
+            font-size: 18px;
+            color: #000;
+            span{
+                color: #00bc5b;
+                font: bold 18px/18px '微软雅黑';
+            }
+        }
+        .am-button{
+            background: #00bc5b;
+            color: #fff;
+            margin-top: 20px;
+        }
+    }
+}
