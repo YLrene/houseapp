@@ -13,7 +13,7 @@ export default class My extends Component {
                     <Flex justify='around'>
                         <img className='head' src={require('../../../assets/imgs/head.jpg')} />
                         <div className='headSpan'>
-                            <span>登录/注册</span>
+                            <span onClick={this.myGoLogin.bind(this)}>登录/注册</span>
                             <span>可以与经纪人发起聊天</span>
                         </div>
                         <img className='set_up' src={require('../../../assets/imgs/set_up.png')} />
@@ -99,5 +99,10 @@ export default class My extends Component {
                 </div>
             </div>
         )
+    }
+
+    // 点击登录注册跳转到登陆页面
+    myGoLogin(){
+        window.location.href = '/#/login'
     }
 }

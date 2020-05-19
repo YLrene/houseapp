@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Carousel,NavBar,SearchBar,Grid,WhiteSpace,WingBlank  } from 'antd-mobile';
+import { Carousel,Grid,WhiteSpace,WingBlank,NavBar,SearchBar  } from 'antd-mobile';
 
 import { gethouselist } from '../../../api/apis'
 
@@ -9,6 +9,7 @@ import './first.scss'
 
 export default class First extends Component {
     state = {
+        city:'定位中',  //顶部定位
         data: ['banner1', 'banner2', 'banner3','banner4','banner5'], //轮播
         imgHeight: 176,
         // 导航图标
@@ -51,14 +52,19 @@ export default class First extends Component {
     render() {
         return (
             <div className='first'>
-                {/* 搜索导航 */}
+                {/* 顶部显示条 */}
                 <NavBar
-                    mode="dark"
-                    leftContent={<select><option>成都市</option></select>}
-                    rightContent={
-                        <img src={require("../../../assets/imgs/seeMap.png")} alt='' />
-                    }>
-                    <SearchBar placeholder="Search" maxLength={10} />
+                    mode="light"
+                    icon={<span onClick={this.clickTitle.bind(this,'/#/city')}>{this.state.city}▼</span>}
+                    rightContent={[
+                        <div  className='seeMap' onClick={this.clickTitle.bind(this,'/#/map') }>
+                            <img src={require('../../../assets/imgs/seeMap.png')} alt='' />                            
+                        </div>
+                    ]}
+                    >
+                    <div className='searchBtn' onClick={this.clickTitle.bind(this,'/#/search')}>
+                        <SearchBar placeholder="挑好房，上房产App" />
+                    </div>
                 </NavBar>
                 
                 {/* 轮播 */}
@@ -141,14 +147,45 @@ export default class First extends Component {
         )
     }
     
-    // 初始化渲染猜你喜欢列表
+    // 初始化渲染
     componentDidMount(){
+        //顶部初始化获取用户所在城市信息
+        //实例化城市查询类
+        var that = this;
+        var citysearch = new window.AMap.CitySearch();
+        //自动获取用户IP，返回当前城市
+        citysearch.getLocalCity(function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                if (result && result.city && result.bounds) {
+                    var cityinfo = result.city;
+                    var citybounds = result.bounds;
+                    
+                    that.setState({
+                        city:cityinfo
+                    })
+                    
+                    //地图显示当前城市
+                    // map.setBounds(citybounds);
+                }
+            } else {
+                console.log(result.info);
+                
+            }
+        });
+        
+
+
+        // 调用猜你喜欢接口获取数据列表
         gethouselist().then(list=>{
             this.setState({
                 houseList:list.data
             })
-            console.log(list.data);
-            
         })
+
+    }
+
+    // 点击顶部导航条跳转相应页面
+    clickTitle(url){
+        window.location.href=url;
     }
 }

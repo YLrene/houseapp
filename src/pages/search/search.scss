@@ -1,0 +1,19 @@
+.search{
+    background: #eee;
+    .topSearch{
+        .am-search-input{
+            border-radius: 20px;
+        }
+    }
+    .searchInfo{
+        height: 120px;
+        border-top: 1px solid #999;
+        span{
+            display: inline-block;
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            background: #fff;
+            margin: 15px 10px;
+        }
+    }
+}

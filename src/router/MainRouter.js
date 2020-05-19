@@ -8,6 +8,8 @@ import Nav from '../pages/nav/Nav'
 import Login from '../pages/login/Login'
 import Reg from '../pages/reg/Reg'
 import City from '../pages/city/City'
+import Search from '../pages/search/Search'
+import Map from '../pages/map/Map'
 import Error404 from '../pages/error404/Error404'
 
 export default class MainRouter extends Component {
@@ -20,6 +22,8 @@ export default class MainRouter extends Component {
                     <Route path='/login' component={Login}></Route>
                     <Route path='/reg' component={Reg}></Route>
                     <Route path='/city' component={City}></Route>
+                    <Route path='/search' component={Search}></Route>
+                    <Route path='/map' component={Map}></Route>
                     {/* 不加path路径，代表上面路径都没匹配上，默认渲染的一个页面，可以是首页，也可以设置报错页 */}
                     <Route component={Error404}></Route>                    
                 </Switch>

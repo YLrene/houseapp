@@ -28,7 +28,7 @@ export default class Login extends Component {
                     <InputItem placeholder="请输入手机号" clear value={acc} onChange={this.accChange}>
                         <div style={{ backgroundImage: 'url('+require('../../assets/imgs/user.png')+')', backgroundSize: 'cover', height: '22px', width: '22px' }} />
                     </InputItem>
-                    <InputItem placeholder="请输入密码" clear value={pwd} onChange={this.pwdChange}>
+                    <InputItem placeholder="请输入密码" type='password' clear value={pwd} onChange={this.pwdChange}>
                         <div style={{ backgroundImage: 'url('+require('../../assets/imgs/pwd.png')+')', backgroundSize: 'cover', height: '22px', width: '22px' }} />
                     </InputItem>
 
